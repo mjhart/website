@@ -12,4 +12,4 @@ You can get in touch with me via [GitHub](https://github.com/mjhart), [Twitter](
 
 ### Source Code
 
-This site is built with [Hakyll](https://jaspervdj.be/hakyll/). The source code is hosted on [GitHub](https://github.com/mjhart).
+This site is built with [Hakyll](https://jaspervdj.be/hakyll/). The source code is hosted on [GitHub](https://github.com/mjhart/website).

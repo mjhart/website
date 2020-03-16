@@ -6,6 +6,10 @@ html {
 body {
   font-size: 1.6rem;
   color: #000;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 header {
@@ -85,11 +89,6 @@ pre {
 }
 
 @media (max-width: 319px) {
-  body {
-    width: 90%;
-    margin: 0;
-    padding: 0 5%;
-  }
   header {
     margin: 4.2rem 0;
   }
@@ -114,11 +113,6 @@ pre {
 }
 
 @media (min-width: 320px) {
-  body {
-    width: 90%;
-    margin: 0;
-    padding: 0 5%;
-  }
   header {
     margin: 4.2rem 0;
   }
@@ -144,9 +138,8 @@ pre {
 
 @media (min-width: 640px) {
   body {
-    width: 60rem;
-    margin: 0 auto;
-    padding: 0;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
   header {
     margin: 0 0 3rem;

@@ -1,5 +1,5 @@
 ---
-title: Fish and Nix
+title: Using Fish with Nix
 ---
 
 I have used [fish](https://fishshell.com) as my main command line shell for many years now. I love the ease of use and sane defaults provided by fish. However, I recently started using [Nix](https://nixos.org/) as a package manager and discovered that fish and Nix require a bit of configuration to use together. This article describes how to configure fish so it will work with the Nix package manager.

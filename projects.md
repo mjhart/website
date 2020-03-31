@@ -2,6 +2,12 @@
 title: Projects
 ---
 
+## Hurl
+
+Interactive command line HTTP client
+
+[GitHub](https://github.com/mjhart/hurl)
+
 ## SpireUI
 
 A no-code web app builder for REST APIs.

@@ -31,6 +31,7 @@ main = hakyll $ do
     compile $
       pandocCompiler
         >>= loadAndApplyTemplate "templates/post.html" postCtx
+        >>= saveSnapshot "content"
         >>= loadAndApplyTemplate "templates/default.html" postCtx
         >>= relativizeUrls
   create ["archive.html"] $ do
@@ -58,9 +59,25 @@ main = hakyll $ do
         >>= loadAndApplyTemplate "templates/default.html" indexCtx
         >>= relativizeUrls
   match "templates/*" $ compile templateBodyCompiler
+  create ["rss.xml"] $ do
+    route idRoute
+    compile $ do
+      let feedCtx = postCtx `mappend` bodyField "description"
+      posts <- loadAllSnapshots "posts/*" "content" >>= fmap (take 10) . recentFirst
+      renderRss feedConfiguration feedCtx posts
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
   dateField "date" "%B %e, %Y"
     <> defaultContext
+
+feedConfiguration :: FeedConfiguration
+feedConfiguration =
+  FeedConfiguration
+    { feedTitle = "Matt Hart's Blog",
+      feedDescription = "Thoughts on writing better software.",
+      feedAuthorName = "Matt Hart",
+      feedAuthorEmail = "matthart4@gmail.com",
+      feedRoot = "https://mjhart.netlify.app"
+    }
